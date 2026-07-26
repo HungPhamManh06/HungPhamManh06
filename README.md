@@ -98,17 +98,6 @@
 
 ---
 
-### ⚙️ Cách bật hiệu ứng rắn (đã làm xong 90%)
-
-Bạn đã có sẵn code trong README, nhưng bị thiếu file workflow ở đúng vị trí. Mình đã fix cho bạn:
-
-1. File workflow phải ở `.github/workflows/snake.yml` (mình đã tạo)
-2. Vào repo **Settings → Actions → General → Workflow permissions** → chọn **Read and write permissions** → Save
-3. Vào tab **Actions** → chọn **Generate Snake Animation** → bấm **Run workflow** để chạy lần đầu
-4. Đợi 1-2 phút, branch `output` sẽ tự tạo, chứa file SVG rắn → profile sẽ hiện ngay!
-
-> Nếu vẫn thấy ảnh rắn lỗi 404, là do branch `output` chưa được tạo vì workflow chưa chạy. Chỉ cần chạy thủ công 1 lần là xong.
-
 ---
 
 <div align="center">
