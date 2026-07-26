@@ -17,7 +17,7 @@
 - 🔭 I'm currently working on **KindnessMap** — a map to spread kindness 💚
 - 🌱 I'm currently learning `JavaScript` and `Web Development` in general :D
 - 📍 From Vietnam 🇻🇳
-- 📫 How to reach me: **your-email@example.com**
+- 📫 How to reach me: **hungvbhpcba6@gmail.com**
 
 </td>
 <td width="50%" align="center">
