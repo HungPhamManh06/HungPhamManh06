@@ -1,18 +1,12 @@
-# 🐍 Snake Animation - Hiệu ứng rắn ăn contribution graph
-# File này PHẢI đặt tại: .github/workflows/snake.yml
-# Sau khi push, vào Settings -> Actions -> General -> bật "Read and write permissions"
-# và chạy workflow lần đầu ở tab Actions -> Generate Snake
-
+# 🐍 FIXED - Hiệu ứng rắn ăn contribution
 name: Generate Snake Animation
 
 on:
   schedule:
-    # Chạy mỗi 6 tiếng để cập nhật rắn (0h, 6h, 12h, 18h)
-    - cron: "0 */6 * * *"
-  workflow_dispatch: # Cho phép bấm nút chạy thủ công
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: write
@@ -22,25 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate snake SVG
-        uses: Platane/snk/svg-only@v3
+      - name: Generate snake SVGs
+        uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: HungPhamManh06
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-            dist/github-contribution-grid-snake.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Push snake to output branch
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
-          commit_message: "chore: update snake animation"
+          commit_message: "chore: update snake"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
